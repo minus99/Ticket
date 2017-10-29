@@ -1,0 +1,55 @@
+{
+"data":[
+  {
+  "name": "Project Manager",
+  "type": "multiselect",
+  "required": false,
+  "data":[
+    {"name":"Gökay Ortasöz", "email":"gokay.ortasoz@proj-e.com"},
+    {"name":"Deniz Demiryürek", "email":"deniz.demiryurek@proj-e.com"},
+    {"name":"Gökay Ortasöz", "email":"gokay.ortasoz@proj-e.com"},
+    {"name":"Deniz Demiryürek", "email":"deniz.demiryurek@proj-e.com"},
+    {"name":"Gökay Ortasöz", "email":"gokay.ortasoz@proj-e.com"},
+    {"name":"Deniz Demiryürek", "email":"deniz.demiryurek@proj-e.com"}
+  ]
+  },
+  {
+  "name": "Project Manager",
+  "type": "multiselect",
+  "required": false,
+  "data":[
+    {"name":"Gökay Ortasöz", "email":"gokay.ortasoz@proj-e.com"},
+    {"name":"Deniz Demiryürek", "email":"deniz.demiryurek@proj-e.com"},
+    {"name":"Gökay Ortasöz", "email":"gokay.ortasoz@proj-e.com"},
+    {"name":"Deniz Demiryürek", "email":"deniz.demiryurek@proj-e.com"},
+    {"name":"Gökay Ortasöz", "email":"gokay.ortasoz@proj-e.com"},
+    {"name":"Deniz Demiryürek", "email":"deniz.demiryurek@proj-e.com"}
+  ]
+  },
+  {
+  "name": "Project Manager",
+  "type": "multiselect",
+  "required": false,
+  "data":[
+    {"name":"Gökay Ortasöz", "email":"gokay.ortasoz@proj-e.com"},
+    {"name":"Deniz Demiryürek", "email":"deniz.demiryurek@proj-e.com"},
+    {"name":"Gökay Ortasöz", "email":"gokay.ortasoz@proj-e.com"},
+    {"name":"Deniz Demiryürek", "email":"deniz.demiryurek@proj-e.com"},
+    {"name":"Gökay Ortasöz", "email":"gokay.ortasoz@proj-e.com"},
+    {"name":"Deniz Demiryürek", "email":"deniz.demiryurek@proj-e.com"}
+  ]
+  },
+  {
+  "name":"interval",
+  "type":"daterange",
+  "required": true,
+  "default_value": "12/09/2017"
+  },
+  {
+  "name":"sub ticket",
+  "type":"checkbox",
+  "required": false,
+  "default_value":"checked"
+  }
+]
+}
