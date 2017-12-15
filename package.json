@@ -12,6 +12,6 @@
     "react-native-gifted-chat": "^0.3.0",
     "react-native-multiple-select": "^0.3.0",
     "react-native-swipeable": "^0.6.0",
-    "react-navigation": "^1.0.0-beta.15"
+    "react-navigation": "^1.0.0-beta.21"
   }
 }
