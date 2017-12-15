@@ -7,6 +7,7 @@ import {
   Image,
   FlatList,
   TouchableHighlight,
+  Modal,
 } from 'react-native';
 import Swipeable from 'react-native-swipeable';
 import { BlurView } from 'expo';
@@ -26,7 +27,7 @@ export default class ListPage extends React.Component{
                     </View>
                   ),
       headerRight:( <View style={{marginRight:5}}>
-                      <IconButton icon={ <Image source={require("../../assets/icons/new-p.png")} style={styles.iconNormalSize} /> } callback={this._clearAll} />
+                      <IconButton icon={ <Image source={require("../../assets/icons/new-p.png")} style={styles.iconNormalSize} /> } callback={() => state.params.handleOpenForm()} />
                     </View>
                   ),
       headerBackTitle: null,
@@ -39,6 +40,7 @@ export default class ListPage extends React.Component{
     this.state = {
 
       items: [],
+      editIsVisible: false,
 
     }
   }
@@ -60,7 +62,21 @@ export default class ListPage extends React.Component{
     this.props.navigation.navigate('Details', {user: index});
   }
 
+  _openForm = () => {
+
+    this.setState({
+      editIsVisible: !this.state.editIsVisible
+    })
+    console.log("open form");
+  }
+
   componentDidMount(){
+
+    this.props.navigation.setParams({
+      handleOpenForm: this._openForm,
+    });
+
+
     let data = require('../../data/multiselect.json');
     var items = [];
     for(var i=0; i<data.data.length; ++i)
@@ -86,6 +102,15 @@ export default class ListPage extends React.Component{
         <BlurView tint="default" intensity={98} style={{height:50, position:'absolute', left:0, right:0, top:0, justifyContent:'center', padding:15}}>
           <Text style={[styles.bold, styles.mainColor]}>Tuesday, Dec 21, 2017</Text>
         </BlurView>
+        <Modal
+          animationType="slide"
+          visible={this.state.editIsVisible}
+        >
+          <View style={{padding:20}}>
+            <Text>form</Text>
+            <TextButton name="close" callback={this._openForm} />
+          </View>
+        </Modal>
       </View>
     )
   }
@@ -141,3 +166,63 @@ class ListItem extends React.Component {
     );
   }
 }
+
+
+
+
+
+
+/*
+class Umid extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+
+      // state vars
+
+    }
+  }
+
+  items = "hello";
+
+  function xx(){
+    return(
+      //html
+    )
+  }
+
+  xx = () => {
+    return(
+
+    );
+  }
+
+  getJson = () => {
+
+  }
+
+  componentDidMount(){
+    this.getJson();
+  }
+
+  componentWillMount(){
+  }
+
+
+
+  // all functions
+
+  render(){
+
+    this.items;
+
+    // calc
+
+    return(
+
+      {this.xx}
+      // JSX HTML
+
+    )
+  }
+}*/

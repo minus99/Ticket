@@ -23,7 +23,7 @@ export default class Minus99Timer extends React.Component {
     this.state = {
 
       splashIsOpen: false,
-      timerStart: true,
+      timerStart: false,
 
     };
   }
