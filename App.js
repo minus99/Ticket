@@ -1,15 +1,25 @@
 import React from 'react';
-import { Platform, StatusBar } from 'react-native';
-import { StackNavigator } from 'react-navigation';
+import { Platform, StatusBar, StyleSheet, Button, Image, Text } from 'react-native';
+import { TabNavigator, StackNavigator } from 'react-navigation';
 
-import ListPage from './app/List';
+import Login from './app/views/Login';
+import Home from './app/views/Main';
+import Details from './app/views/Details';
 
-const Ticket = StackNavigator(
-  {
-    List: {
-      screen: ListPage,
+const Happy = StackNavigator({
+  Login: {
+    screen: Login,
+  },
+  Home: {
+    screen: Home,
+    params:{
+      timer:false,
     }
   },
+  Details: {
+    screen: Details,
+  },
+},
   {
     cardStyle: {
       paddingTop: Platform.OS === 'ios' ? 0 : StatusBar.currentHeight,
@@ -19,4 +29,4 @@ const Ticket = StackNavigator(
   }
 );
 
-export default Ticket;
+export default Happy;
