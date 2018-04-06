@@ -47,10 +47,10 @@ export default class TextButton extends React.Component{
   }
 
   _onBlur = (evet) => {
-    console.log(this.state.value);
+    //console.log(this.state.value);
     if(this.state.value === "")
     {
-      console.log("it is black");
+      //console.log("it is black");
       this.setState({placeholder: this.state.label });
       Animated.timing(
         this.state.anim,
@@ -65,6 +65,7 @@ export default class TextButton extends React.Component{
 
   _onChangeText = ( text ) => {
     this.setState({ value: text });
+    if( this.props.onChangeText ) this.props.onChangeText( text );
   }
 
   componentWillMount(){
@@ -83,7 +84,7 @@ export default class TextButton extends React.Component{
       outputRange: [1, 0]
     });
 
-    console.log(placeholder);
+    //console.log(placeholder);
 
     return(
       <TouchableOpacity activeOpacity={0.7} onPress={this._onPress}>

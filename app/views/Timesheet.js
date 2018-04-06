@@ -15,6 +15,9 @@ import { BlurView } from 'expo';
 styles = require('../../app/styles');
 import IconButton from '../../app/UI/IconButton';
 import TextButton from '../../app/UI/TextButton';
+import FieldInput from '../../app/UI/FieldInput';
+import Minus99Picker from '../../app/components/Minus99Picker';
+import Minus99MultipleSelect from '../../app/components/Minus99MultipleSelect';
 
 export default class ListPage extends React.Component{
 
@@ -86,6 +89,51 @@ export default class ListPage extends React.Component{
     this.setState({items: items});
   }
 
+  hours = [
+    {label:'0', value:0},
+    {label:'1', value:1},
+    {label:'2', value:2},
+    {label:'3', value:3},
+    {label:'4', value:4},
+    {label:'5', value:5},
+    {label:'6', value:6},
+    {label:'7', value:7},
+    {label:'8', value:8},
+    {label:'9', value:9},
+    {label:'10', value:10},
+    {label:'11', value:11},
+    {label:'12', value:12},
+  ];
+
+  minutes = [
+    {label:'00', value:0},
+    {label:'05', value:1},
+    {label:'10', value:2},
+    {label:'15', value:3},
+    {label:'20', value:4},
+    {label:'25', value:5},
+    {label:'30', value:6},
+    {label:'35', value:7},
+    {label:'40', value:8},
+    {label:'45', value:9},
+    {label:'50', value:10},
+    {label:'55', value:11},
+  ];
+
+  clients = [{
+    id: '92iijs7yta',
+    name: 'Beko',
+  }, {
+    id: 'a0s0a8ssbsd',
+    name: 'Vepa',
+  }, {
+    id: '16hbajsabsd',
+    name: 'Armine',
+  }, {
+    id: 'nahs75a5sg',
+    name: 'Lescon',
+  }];
+
   render(){
 
     return(
@@ -107,8 +155,16 @@ export default class ListPage extends React.Component{
           visible={this.state.editIsVisible}
         >
           <View style={{padding:20}}>
-            <Text>form</Text>
-            <TextButton name="close" callback={this._openForm} />
+
+            <FieldInput label="Name" />
+            <Minus99MultipleSelect name="Client" items={this.clients} />
+            <View style={{flexDirection:'row'}}>
+              <Minus99Picker name="Hours" items={this.hours} selectedValue={1} />
+              <View style={{width:10}} />
+              <Minus99Picker name="Minutes" items={this.minutes} selectedValue={0} />
+            </View>
+            <TextButton name="CLOSE" callback={this._openForm} />
+
           </View>
         </Modal>
       </View>
